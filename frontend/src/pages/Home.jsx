@@ -1,7 +1,15 @@
+import Hero from "../components/Hero";
+import About from "../components/About";
+import WhyUs from "../components/WhyUs";
+import Contact from "../components/Contact"
+
 const Home = () => {
   return (
     <>
-      <h1>Home</h1>
+      <Hero />
+      <About />
+      <WhyUs />
+      <Contact />
     </>
   );
 };
