@@ -1,7 +1,7 @@
 import tasks from '../assets/tasks.png'
 const Hero = () => {
   return (
-    <div className="container bg-white p-5">
+    <div className="container bg-white p-5" id='home'>
       <div className=' flex justify-around items-center flex-wrap-reverse md:flex-wrap' >
         <div className='my-10'>
           <h1 className='text-4xl text-gray-900 font-medium'>Stay Organized, Stay Productive</h1>

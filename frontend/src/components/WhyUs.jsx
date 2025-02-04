@@ -5,7 +5,7 @@ import { FaSyncAlt } from "react-icons/fa";
 const WhyUs = () => {
   return (
     <>
-      <div className="container py-20">
+      <div className="container py-20" id="why-us">
         <div className="text-center my-10 ">
           <h1 className="text-3xl  font-medium">
             Why Choose Our To-Do List App?

@@ -1,6 +1,6 @@
 const About = () => {
   return (
-    <div className="container bg-gray-50 py-20 text-center px-5">
+    <div className="container bg-gray-50 py-20 text-center px-5" id="about">
       <h1 className="text-3xl font-medium">Your Smart Companion for Productivity</h1>
       <p className="my-10 md:w-[70%] m-auto w-auto">
         Life can get busy, but staying organized shouldn’t be a challenge. Our
