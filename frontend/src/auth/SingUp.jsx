@@ -1,14 +1,22 @@
 const SingUp = () => {
+
+  const singUpHandler = (e)=>{
+    e.preventDefault()
+    
+    return console.log("hello")
+  }
   return (
     <>
       <div className=" bg-white shadow-md">
-        <form action="" className="flex flex-col p-5 gap-3">
+        <form action="" className="flex flex-col p-5 gap-3" onSubmit={singUpHandler}>
           <div className="flex flex-col gap-3">
             <label htmlFor="username">Username:</label>
             <input
               type="text"
               id="username"
               className="border border-gray-900 p-1"
+              name="username"
+              required
             />
           </div>
           <div className="flex flex-col gap-3">
@@ -17,6 +25,8 @@ const SingUp = () => {
               type="email"
               id="email"
               className="border border-gray-900 p-1"
+              name="email"
+              required
             />
           </div>
           <div className="flex flex-col gap-3">
@@ -25,6 +35,8 @@ const SingUp = () => {
               type="password"
               id="password"
               className="border border-gray-900 p-1"
+              name="password"
+              required
             />
           </div>
           <div className="flex flex-col">

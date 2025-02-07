@@ -1,29 +1,38 @@
+import "dotenv/config";
 import express from "express";
 import cors from "cors";
-import mongoose from "mongoose"
-import 'dotenv/config'
+import mongodb from "./database/db.js";
+import authRoute from "./routes/authRoute.js";
 
 const app = express();
-const PORT = process.env.PORT || 5000;
 
-//Middleware
+//Middlewares
+app.use(express.json()); //conver data to json format
 app.use(cors());
+
+//Routes
+app.use("/api/auth", authRoute);
 
 
 //connect to mongodb atlas
-mongoose.connect(process.env.MONGODB_URL).then(()=>{
-    console.log('db connected')
-}).catch((err)=>{
-    console.log(err)
-})
+mongodb;
 
+//error handling middleware globaly
+app.use((err, req, res, next)=>{
 
-//Routes
-app.get("/",(req, res)=>{
-    res.send("hello from express")
+  //set default status code and status if not provide
+  err.statusCode = err.statusCode || 500;
+  err.status = err.status || "error";
+
+  //send error resopnse
+  res.status(err.statusCode).json({
+    status: err.status,
+    message: err.message,
+  })
 })
 
 //start server
-app.listen(PORT,()=>{
-    console.log(`Server is running on port ${PORT}`)
-})
+const PORT = process.env.PORT || 5000;
+app.listen(PORT, () => {
+  console.log(`Server is running on port ${PORT}`);
+});

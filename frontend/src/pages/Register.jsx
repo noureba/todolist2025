@@ -1,4 +1,4 @@
-import Register from "../components/SingUp";
+import Register from "../auth/SingUp";
 
 const RegisterPage = () => {
   return (
